@@ -1,0 +1,16 @@
+{
+    "name": "HDStateMachine",
+    "rootNamespace": "",
+    "references": [
+        "GUID:cf51e3bee2776a34199d04043c4381cc"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
