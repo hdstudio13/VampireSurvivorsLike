@@ -605,6 +605,7 @@ GameObject:
   - component: {fileID: 1643485364}
   - component: {fileID: 1643485363}
   - component: {fileID: 1643485362}
+  - component: {fileID: 1643485365}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -707,6 +708,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1643485360}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1643485365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1643485360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10b908e8cbfd49949d91d40fb936b3a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Gameplay.Player.PlayerRegistrar
+  speed: 2
 --- !u!1001 &6180585172557972203
 PrefabInstance:
   m_ObjectHideFlags: 0

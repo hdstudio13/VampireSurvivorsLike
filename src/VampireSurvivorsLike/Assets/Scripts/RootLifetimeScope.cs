@@ -1,4 +1,6 @@
 using AssetManagement;
+using Gameplay.Input;
+using TimeManagement;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
@@ -16,6 +18,12 @@ public class RootLifetimeScope : LifetimeScope
         
         // windows system
         builder.Register<IWindowFactory>(CreateWindowFactory, Lifetime.Singleton).Keyed(WindowFactoryType.Persistent);
+        
+        // time management
+        builder.Register<UnityTimeService>(Lifetime.Singleton).As<ITimeService>();
+        
+        // input
+        builder.Register<NewInputService>(Lifetime.Singleton).As<IInputService>();
     }
     
     private WindowFactory CreateWindowFactory(IObjectResolver resolver)

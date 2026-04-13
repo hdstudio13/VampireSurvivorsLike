@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherId;
+    static Entitas.IMatcher<GameEntity> _matcherSpeed;
 
-    public static Entitas.IMatcher<GameEntity> Id {
+    public static Entitas.IMatcher<GameEntity> Speed {
         get {
-            if (_matcherId == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.Id);
+            if (_matcherSpeed == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.Speed);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherId = matcher;
+                _matcherSpeed = matcher;
             }
 
-            return _matcherId;
+            return _matcherSpeed;
         }
     }
 }
@@ -33,28 +33,28 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Gameplay.Common.Id id { get { return (Gameplay.Common.Id)GetComponent(GameComponentsLookup.Id); } }
-    public int Id { get { return id.Value; } }
-    public bool hasId { get { return HasComponent(GameComponentsLookup.Id); } }
+    public Gameplay.Movement.Speed speed { get { return (Gameplay.Movement.Speed)GetComponent(GameComponentsLookup.Speed); } }
+    public float Speed { get { return speed.Value; } }
+    public bool hasSpeed { get { return HasComponent(GameComponentsLookup.Speed); } }
 
-    public GameEntity AddId(int newValue) {
-        var index = GameComponentsLookup.Id;
-        var component = (Gameplay.Common.Id)CreateComponent(index, typeof(Gameplay.Common.Id));
+    public GameEntity AddSpeed(float newValue) {
+        var index = GameComponentsLookup.Speed;
+        var component = (Gameplay.Movement.Speed)CreateComponent(index, typeof(Gameplay.Movement.Speed));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
     }
 
-    public GameEntity ReplaceId(int newValue) {
-        var index = GameComponentsLookup.Id;
-        var component = (Gameplay.Common.Id)CreateComponent(index, typeof(Gameplay.Common.Id));
+    public GameEntity ReplaceSpeed(float newValue) {
+        var index = GameComponentsLookup.Speed;
+        var component = (Gameplay.Movement.Speed)CreateComponent(index, typeof(Gameplay.Movement.Speed));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;
     }
 
-    public GameEntity RemoveId() {
-        RemoveComponent(GameComponentsLookup.Id);
+    public GameEntity RemoveSpeed() {
+        RemoveComponent(GameComponentsLookup.Speed);
         return this;
     }
 }

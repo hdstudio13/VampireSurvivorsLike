@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherId;
+    static Entitas.IMatcher<GameEntity> _matcherAxisInput;
 
-    public static Entitas.IMatcher<GameEntity> Id {
+    public static Entitas.IMatcher<GameEntity> AxisInput {
         get {
-            if (_matcherId == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.Id);
+            if (_matcherAxisInput == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.AxisInput);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherId = matcher;
+                _matcherAxisInput = matcher;
             }
 
-            return _matcherId;
+            return _matcherAxisInput;
         }
     }
 }
@@ -33,28 +33,28 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Gameplay.Common.Id id { get { return (Gameplay.Common.Id)GetComponent(GameComponentsLookup.Id); } }
-    public int Id { get { return id.Value; } }
-    public bool hasId { get { return HasComponent(GameComponentsLookup.Id); } }
+    public Gameplay.Input.AxisInput axisInput { get { return (Gameplay.Input.AxisInput)GetComponent(GameComponentsLookup.AxisInput); } }
+    public UnityEngine.Vector2 AxisInput { get { return axisInput.Value; } }
+    public bool hasAxisInput { get { return HasComponent(GameComponentsLookup.AxisInput); } }
 
-    public GameEntity AddId(int newValue) {
-        var index = GameComponentsLookup.Id;
-        var component = (Gameplay.Common.Id)CreateComponent(index, typeof(Gameplay.Common.Id));
+    public GameEntity AddAxisInput(UnityEngine.Vector2 newValue) {
+        var index = GameComponentsLookup.AxisInput;
+        var component = (Gameplay.Input.AxisInput)CreateComponent(index, typeof(Gameplay.Input.AxisInput));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
     }
 
-    public GameEntity ReplaceId(int newValue) {
-        var index = GameComponentsLookup.Id;
-        var component = (Gameplay.Common.Id)CreateComponent(index, typeof(Gameplay.Common.Id));
+    public GameEntity ReplaceAxisInput(UnityEngine.Vector2 newValue) {
+        var index = GameComponentsLookup.AxisInput;
+        var component = (Gameplay.Input.AxisInput)CreateComponent(index, typeof(Gameplay.Input.AxisInput));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;
     }
 
-    public GameEntity RemoveId() {
-        RemoveComponent(GameComponentsLookup.Id);
+    public GameEntity RemoveAxisInput() {
+        RemoveComponent(GameComponentsLookup.AxisInput);
         return this;
     }
 }
