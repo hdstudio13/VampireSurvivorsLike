@@ -1,4 +1,6 @@
-﻿using Gameplay.Input;
+﻿using Architecture;
+using Gameplay.Enemies;
+using Gameplay.Input;
 using Gameplay.Movement;
 using Gameplay.Player;
 using TimeManagement;
@@ -7,11 +9,12 @@ namespace Gameplay
 {
     public class GameplayFeature : Feature
     {
-        public GameplayFeature(GameContext context, ITimeService timeService, IInputService inputService)
+        public GameplayFeature(ISystemFactory factory)
         {
-            Add(new InputFeature(context, inputService));
-            Add(new MovementFeature(context, timeService));
-            Add(new PlayerFeature(context));
+            Add(factory.Create<InputFeature>());
+            Add(factory.Create<MovementFeature>());
+            Add(factory.Create<PlayerFeature>());
+            Add(factory.Create<EnemyFeature>());
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using Architecture;
 using Gameplay.Input;
 using TimeManagement;
 using UnityEngine;
@@ -8,27 +9,21 @@ namespace Gameplay
 {
     public class EcsRunner : MonoBehaviour
     {
-        private GameContext _context;
-        private ITimeService _timeService;
+        private ISystemFactory _systems;
         private GameplayFeature _gameplayFeature;
-        private IInputService _inputService;
 
         [Inject]
         private void Construct
         (
-            GameContext context,
-            ITimeService timeService,
-            IInputService inputService
+            ISystemFactory systems
         )
         {
-            _inputService = inputService;
-            _timeService = timeService;
-            _context = context;
+            _systems = systems;
         }
         
         private void Awake()
         {
-            _gameplayFeature = new GameplayFeature(_context, _timeService, _inputService);
+            _gameplayFeature = _systems.Create<GameplayFeature>();
         }
 
         private void Start()

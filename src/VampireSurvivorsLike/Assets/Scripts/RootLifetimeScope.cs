@@ -1,4 +1,6 @@
+using Architecture;
 using AssetManagement;
+using Common;
 using Gameplay.Input;
 using TimeManagement;
 using UnityEngine;
@@ -12,6 +14,8 @@ public class RootLifetimeScope : LifetimeScope
     
     protected override void Configure(IContainerBuilder builder)
     {
+        builder.Register<Instantiator>(Lifetime.Scoped).As<IInstantiator>();
+        
         // asset management
         builder.Register<AddressableAssetMediator>(Lifetime.Singleton);
         builder.Register<AddressableAssetProvider>(Lifetime.Scoped).As<IAssetProvider>();

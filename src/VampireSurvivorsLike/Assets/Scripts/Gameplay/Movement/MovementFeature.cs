@@ -1,14 +1,15 @@
-﻿using Gameplay.Movement.Systems;
+﻿using Architecture;
+using Gameplay.Movement.Systems;
 using TimeManagement;
 
 namespace Gameplay.Movement
 {
     public class MovementFeature : Feature
     {
-        public MovementFeature(GameContext context, ITimeService timeService)
+        public MovementFeature(ISystemFactory factory)
         {
-            Add(new MoveWorldPositionSystem(context, timeService));
-            Add(new UpdateTransformPositionSystem(context));
+            Add(factory.Create<MoveWorldPositionSystem>());
+            Add(factory.Create<UpdateTransformPositionSystem>());
         }
     }
 }

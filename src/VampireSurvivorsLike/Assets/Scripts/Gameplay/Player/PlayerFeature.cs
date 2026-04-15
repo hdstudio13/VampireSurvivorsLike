@@ -1,12 +1,13 @@
-﻿using Gameplay.Player.Systems;
+﻿using Architecture;
+using Gameplay.Player.Systems;
 
 namespace Gameplay.Player
 {
     public class PlayerFeature : Feature
     {
-        public PlayerFeature(GameContext context)
+        public PlayerFeature(ISystemFactory factory)
         {
-            Add(new UpdatePlayerMoveDirectionByInputSystem(context));
+            Add(factory.Create<UpdatePlayerMoveDirectionByInputSystem>());
         }
     }
 }
