@@ -2,7 +2,7 @@
 
 namespace Architecture.EntityViews
 {
-    public interface IEntityRegistrar<TEntity> where TEntity : IEntity
+    public interface IEntityRegistrar<in TEntity> where TEntity : Entity
     {
         void RegisterComponents(TEntity entity);
         void UnregisterComponents(TEntity entity);

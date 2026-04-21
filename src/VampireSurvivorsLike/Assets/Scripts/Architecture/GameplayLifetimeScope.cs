@@ -1,4 +1,5 @@
-﻿using Architecture.Systems;
+﻿using Architecture.Input;
+using Architecture.Systems;
 using AssetManagement;
 using UnityEngine;
 using VContainer;
@@ -13,6 +14,7 @@ namespace Architecture
 
         protected override void Configure(IContainerBuilder builder)
         {
+            // windows
             builder.Register<IWindowFactory>(CreateWindowFactory, Lifetime.Singleton).Keyed(WindowFactoryType.Default);
         }
     

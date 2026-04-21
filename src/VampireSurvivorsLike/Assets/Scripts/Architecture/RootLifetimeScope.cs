@@ -1,4 +1,8 @@
+using Architecture.EntityViews;
+using Architecture.EntityViews.GameContext;
 using Architecture.GameStates;
+using Architecture.Identification;
+using Architecture.Input;
 using Architecture.Systems;
 using Architecture.TimeManagement;
 using AssetManagement;
@@ -22,6 +26,9 @@ namespace Architecture
             builder.Register<AddressableAssetMediator>(Lifetime.Singleton);
             builder.Register<AddressableAssetProvider>(Lifetime.Scoped).As<IAssetProvider>();
         
+            // identification service
+            builder.Register<IdentifierService>(Lifetime.Singleton).As<IIdentifierService>();
+            
             // windows system
             builder.Register<IWindowFactory>(CreateWindowFactory, Lifetime.Singleton).Keyed(WindowFactoryType.Persistent);
         
@@ -36,6 +43,12 @@ namespace Architecture
             
             // system factory
             builder.Register<SystemFactory>(Lifetime.Singleton).As<ISystemFactory>();
+            
+            // game entity view factory
+            builder.Register<GameEntityViewFactory>(Lifetime.Singleton).As<IGameEntityViewFactory>();
+            
+            // input
+            builder.RegisterEntryPoint<InputService>();
         }
     
         private WindowFactory CreateWindowFactory(IObjectResolver resolver)

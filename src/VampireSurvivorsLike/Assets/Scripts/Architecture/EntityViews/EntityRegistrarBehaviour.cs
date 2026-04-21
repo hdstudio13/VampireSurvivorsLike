@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Architecture.EntityViews
 {
-    public abstract class EntityRegistrarBehaviour<TEntity> : MonoBehaviour, IEntityRegistrar<TEntity> where TEntity : IEntity
+    public abstract class EntityRegistrarBehaviour<TEntity> : MonoBehaviour, IEntityRegistrar<TEntity> where TEntity : Entity
     {
         protected void Reset()
         {

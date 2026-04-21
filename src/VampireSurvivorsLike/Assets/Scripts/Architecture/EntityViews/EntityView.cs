@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Architecture.EntityViews
 {
-    public abstract class EntityView<TEntity> : MonoBehaviour where TEntity : IEntity
+    public abstract class EntityView<TEntity> : MonoBehaviour where TEntity : Entity
     {
         [SerializeField] private EntityRegistrarBehaviour<TEntity>[] monoRegistrars;
         
@@ -51,7 +51,7 @@ namespace Architecture.EntityViews
                 registrar.UnregisterComponents(Entity);
             }
             
-            Entity = default;
+            Entity = null;
         }
 
         #endregion

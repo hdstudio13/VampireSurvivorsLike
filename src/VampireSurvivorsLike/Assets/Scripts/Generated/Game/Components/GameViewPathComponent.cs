@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherId;
+    static Entitas.IMatcher<GameEntity> _matcherViewPath;
 
-    public static Entitas.IMatcher<GameEntity> Id {
+    public static Entitas.IMatcher<GameEntity> ViewPath {
         get {
-            if (_matcherId == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.Id);
+            if (_matcherViewPath == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.ViewPath);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherId = matcher;
+                _matcherViewPath = matcher;
             }
 
-            return _matcherId;
+            return _matcherViewPath;
         }
     }
 }
@@ -33,28 +33,28 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Gameplay.Features.Common.Id id { get { return (Gameplay.Features.Common.Id)GetComponent(GameComponentsLookup.Id); } }
-    public uint Id { get { return id.Value; } }
-    public bool hasId { get { return HasComponent(GameComponentsLookup.Id); } }
+    public Gameplay.Features.View.ViewPath viewPath { get { return (Gameplay.Features.View.ViewPath)GetComponent(GameComponentsLookup.ViewPath); } }
+    public string ViewPath { get { return viewPath.Value; } }
+    public bool hasViewPath { get { return HasComponent(GameComponentsLookup.ViewPath); } }
 
-    public GameEntity AddId(uint newValue) {
-        var index = GameComponentsLookup.Id;
-        var component = (Gameplay.Features.Common.Id)CreateComponent(index, typeof(Gameplay.Features.Common.Id));
+    public GameEntity AddViewPath(string newValue) {
+        var index = GameComponentsLookup.ViewPath;
+        var component = (Gameplay.Features.View.ViewPath)CreateComponent(index, typeof(Gameplay.Features.View.ViewPath));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
     }
 
-    public GameEntity ReplaceId(uint newValue) {
-        var index = GameComponentsLookup.Id;
-        var component = (Gameplay.Features.Common.Id)CreateComponent(index, typeof(Gameplay.Features.Common.Id));
+    public GameEntity ReplaceViewPath(string newValue) {
+        var index = GameComponentsLookup.ViewPath;
+        var component = (Gameplay.Features.View.ViewPath)CreateComponent(index, typeof(Gameplay.Features.View.ViewPath));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;
     }
 
-    public GameEntity RemoveId() {
-        RemoveComponent(GameComponentsLookup.Id);
+    public GameEntity RemoveViewPath() {
+        RemoveComponent(GameComponentsLookup.ViewPath);
         return this;
     }
 }
