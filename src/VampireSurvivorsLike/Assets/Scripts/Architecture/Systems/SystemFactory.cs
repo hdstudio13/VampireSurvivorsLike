@@ -1,7 +1,7 @@
 ﻿using Common;
 using Entitas;
 
-namespace Architecture
+namespace Architecture.Systems
 {
     public class SystemFactory : ISystemFactory
     {

@@ -1,8 +1,8 @@
 ﻿namespace HDStateMachine
 {
-    public interface IStateContainer<in TKey>
+    public interface IStateContainer
     {
-        void AddState(TKey stateId, IState state);
-        void RemoveState(TKey stateId);
+        void AddState(IState state);
+        void RemoveState<TState>() where TState : IState;
     }
 }

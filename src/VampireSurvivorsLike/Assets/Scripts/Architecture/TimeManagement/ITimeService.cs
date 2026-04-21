@@ -1,4 +1,4 @@
-﻿namespace TimeManagement
+﻿namespace Architecture.TimeManagement
 {
     public interface ITimeService
     {

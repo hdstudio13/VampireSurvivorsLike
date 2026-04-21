@@ -1,7 +1,7 @@
 ﻿namespace HDStateMachine
 {
-    public interface IStateChanger<in TKey>
+    public interface IStateChanger
     {
-        void EnterState(TKey key);
+        void ChangeState<TState>() where TState : IState;
     }
 }

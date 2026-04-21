@@ -1,6 +1,6 @@
 namespace HDStateMachine
 {
-    public interface IStateMachine<in TKey> : IStateContainer<TKey>, IStateChanger<TKey>
+    public interface IStateMachine : IStateContainer, IStateChanger
     {
         public void Update(float deltaTime);
     }
