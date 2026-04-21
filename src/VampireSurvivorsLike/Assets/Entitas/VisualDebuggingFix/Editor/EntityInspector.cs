@@ -6,7 +6,7 @@ using UnityEditor;
 
 namespace Entitas.VisualDebuggingFix.Editor
 {
-    [CustomEditor(typeof (EntityBehaviour))]
+    [CustomEditor(typeof(EntityBehaviour))]
     [CanEditMultipleObjects]
     public class EntityInspector : UnityEditor.Editor
     {
