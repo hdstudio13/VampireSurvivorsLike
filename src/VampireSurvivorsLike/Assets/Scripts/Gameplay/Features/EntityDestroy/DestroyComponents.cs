@@ -1,6 +1,6 @@
 ﻿using Entitas;
 
-namespace Gameplay.Features.LifeCycle
+namespace Gameplay.Features.EntityDestroy
 {
     [Game] public class Destroying : IComponent {}
     [Game] public class Destroyed : IComponent {}

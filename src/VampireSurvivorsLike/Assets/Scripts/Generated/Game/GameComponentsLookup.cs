@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Gameplay.Features.EntityDestroy;
+
 public static class GameComponentsLookup {
 
     public const int Id = 0;
@@ -13,8 +16,8 @@ public static class GameComponentsLookup {
     public const int WorldPosition = 2;
     public const int Destroyed = 3;
     public const int Destroying = 4;
-    public const int MoveVector = 5;
-    public const int Speed = 6;
+    public const int MoveSpeed = 5;
+    public const int MoveVector = 6;
     public const int Player = 7;
     public const int View = 8;
     public const int ViewPath = 9;
@@ -27,8 +30,8 @@ public static class GameComponentsLookup {
         "WorldPosition",
         "Destroyed",
         "Destroying",
+        "MoveSpeed",
         "MoveVector",
-        "Speed",
         "Player",
         "View",
         "ViewPath"
@@ -38,10 +41,10 @@ public static class GameComponentsLookup {
         typeof(Gameplay.Features.Common.Id),
         typeof(Gameplay.Features.Common.TransformComponent),
         typeof(Gameplay.Features.Common.WorldPosition),
-        typeof(Gameplay.Features.LifeCycle.Destroyed),
-        typeof(Gameplay.Features.LifeCycle.Destroying),
+        typeof(Destroyed),
+        typeof(Destroying),
+        typeof(Gameplay.Features.Movement.MoveSpeed),
         typeof(Gameplay.Features.Movement.MoveVector),
-        typeof(Gameplay.Features.Movement.Speed),
         typeof(Gameplay.Features.Player.PlayerComponent),
         typeof(Gameplay.Features.View.View),
         typeof(Gameplay.Features.View.ViewPath)

@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Gameplay.Features.EntityDestroy;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherDestroyed;
@@ -33,7 +36,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Gameplay.Features.LifeCycle.Destroyed destroyedComponent = new Gameplay.Features.LifeCycle.Destroyed();
+    static readonly Destroyed destroyedComponent = new Destroyed();
 
     public bool isDestroyed {
         get { return HasComponent(GameComponentsLookup.Destroyed); }

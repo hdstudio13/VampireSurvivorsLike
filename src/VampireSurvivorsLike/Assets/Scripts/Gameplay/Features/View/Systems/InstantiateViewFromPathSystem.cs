@@ -24,7 +24,8 @@ namespace Gameplay.Features.View.Systems
                     GameMatcher.ViewPath
                 ).NoneOf
                 (
-                    GameMatcher.View
+                    GameMatcher.View,
+                    GameMatcher.Destroying
                 ));
         }
         

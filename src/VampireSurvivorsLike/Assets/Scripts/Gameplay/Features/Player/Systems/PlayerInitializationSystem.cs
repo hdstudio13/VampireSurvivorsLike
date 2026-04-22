@@ -27,7 +27,7 @@ namespace Gameplay.Features.Player.Systems
                 .AddId(_identifier.Next())
                 .With(x => x.isPlayer = true)
                 .AddWorldPosition(new Vector2(0,0))
-                .AddSpeed(5)
+                .AddMoveSpeed(5)
                 .AddViewPath("EntityViews/PlayerView.prefab");
         }
     }

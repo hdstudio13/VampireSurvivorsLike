@@ -17,7 +17,7 @@ namespace Gameplay.Features.Player.Systems
             _players = context.GetGroup(GameMatcher
                 .AllOf(
                     GameMatcher.Player, 
-                    GameMatcher.Speed)
+                    GameMatcher.MoveSpeed)
             );
         }
         
@@ -25,7 +25,7 @@ namespace Gameplay.Features.Player.Systems
         {
             foreach (var player in _players)
             {
-                player.ReplaceMoveVector(player.Speed * _input.MoveAxis * _time.DeltaTime);
+                player.ReplaceMoveVector(player.MoveSpeed * _input.MoveAxis * _time.DeltaTime);
             }
         }
     }
