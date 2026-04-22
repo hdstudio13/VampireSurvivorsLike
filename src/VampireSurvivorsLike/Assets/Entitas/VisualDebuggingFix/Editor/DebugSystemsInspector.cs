@@ -124,7 +124,7 @@ namespace Entitas.VisualDebuggingFix.Editor
             EditorGUILayout.Space();
             EditorGUILayout.BeginHorizontal();
             this._systemSortMethod = (DebugSystemsInspector.SortMethod) EditorGUILayout.EnumPopup((Enum) this._systemSortMethod, EditorStyles.popup, GUILayout.Width(150f));
-            DebugSystemsInspector._systemNameSearchString = EditorLayout.SearchTextField(DebugSystemsInspector._systemNameSearchString);
+            DebugSystemsInspector._systemNameSearchString = this.safeSearchTextField(DebugSystemsInspector._systemNameSearchString);
             EditorGUILayout.EndHorizontal();
             EditorGUILayout.Space();
             DebugSystemsInspector._showInitializeSystems = EditorLayout.DrawSectionHeaderToggle("Initialize Systems", DebugSystemsInspector._showInitializeSystems);
@@ -186,7 +186,7 @@ namespace Entitas.VisualDebuggingFix.Editor
             {
                 if (!(systemInfo.system is DebugSystems system2) || DebugSystemsInspector.shouldShowSystems(system2, type))
                 {
-                    if (EditorLayout.MatchesSearchString(systemInfo.systemName.ToLower(), DebugSystemsInspector._systemNameSearchString.ToLower()))
+                    if (EditorLayout.MatchesSearchString((systemInfo.systemName ?? string.Empty).ToLowerInvariant(), (DebugSystemsInspector._systemNameSearchString ?? string.Empty).ToLowerInvariant()))
                     {
                         EditorGUILayout.BeginHorizontal();
                         int indentLevel = EditorGUI.indentLevel;
@@ -244,6 +244,12 @@ namespace Entitas.VisualDebuggingFix.Editor
                 }
             }
             return num;
+        }
+
+        private string safeSearchTextField(string value)
+        {
+            var style = EditorStyles.toolbarSearchField ?? EditorStyles.textField ?? GUI.skin?.textField;
+            return EditorGUILayout.TextField(value ?? string.Empty, style);
         }
 
         private static IEnumerable<Entitas.VisualDebugging.Unity.SystemInfo> getSortedSystemInfos(
