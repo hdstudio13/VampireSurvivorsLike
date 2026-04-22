@@ -2,6 +2,7 @@
 using Architecture.Input;
 using Architecture.Systems;
 using AssetManagement;
+using Unity.Cinemachine;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
@@ -12,6 +13,8 @@ namespace Architecture
     public class GameplayLifetimeScope : LifetimeScope
     {
         [SerializeField] private Transform windowsRoot;
+        [SerializeField] private CinemachineCamera cinemachineCamera;
+        [SerializeField] private CinemachineBrain cinemachineBrain;
 
         protected override void Configure(IContainerBuilder builder)
         {
@@ -26,6 +29,10 @@ namespace Architecture
             
             // game entity view factory
             builder.Register<GameEntityViewFactory>(Lifetime.Singleton).As<IGameEntityViewFactory>();
+            
+            // camera
+            builder.RegisterInstance(cinemachineCamera);
+            builder.RegisterInstance(cinemachineBrain);
         }
     
         private WindowFactory CreateWindowFactory(IObjectResolver resolver)

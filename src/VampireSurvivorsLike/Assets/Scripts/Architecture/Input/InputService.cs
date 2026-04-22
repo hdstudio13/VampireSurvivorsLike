@@ -6,7 +6,7 @@ namespace Architecture.Input
     public class InputService : IInitializable, IInputService
     {
         private readonly PlayerInput _input;
-
+        
         public InputService()
         {
             _input = new PlayerInput();
@@ -18,6 +18,7 @@ namespace Architecture.Input
             _input.Player.Enable();
         }
         
-        public Vector2 MoveAxis => _input.Player.Move.ReadValue<Vector2>();
+        public float TurnAxis => _input.Player.Turn.ReadValue<float>();
+        public float GasAxis => _input.Player.Gas.ReadValue<float>();
     }
 }

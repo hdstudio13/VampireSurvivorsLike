@@ -33,6 +33,8 @@ namespace Architecture.GameStates
             gameplayScope.transform.SetParent(null);
             SceneManager.MoveGameObjectToScene(gameplayScope.gameObject, SceneManager.GetActiveScene());
             IInstantiator instantiator = gameplayScope.Container.Resolve<IInstantiator>();
+            
+            _gameStateMachine.RemoveState<GameplayState>();
             _gameStateMachine.AddState(instantiator.Instantiate<GameplayState>(_gameStateMachine));
             _gameStateMachine.ChangeState<GameplayState>();
         }

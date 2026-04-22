@@ -20,7 +20,7 @@ namespace Gameplay.Features.Movement.Systems
         {
             foreach (var mover in _entities)
             {
-                mover.Transform.position = new Vector3(mover.WorldPosition.x, 0, mover.WorldPosition.y);
+                mover.Transform.position = mover.WorldPosition;
             }
         }
     }

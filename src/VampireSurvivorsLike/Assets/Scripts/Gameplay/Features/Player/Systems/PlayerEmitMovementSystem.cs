@@ -1,6 +1,7 @@
 ﻿using Architecture.Input;
 using Architecture.TimeManagement;
 using Entitas;
+using UnityEngine;
 
 namespace Gameplay.Features.Player.Systems
 {
@@ -17,7 +18,8 @@ namespace Gameplay.Features.Player.Systems
             _players = context.GetGroup(GameMatcher
                 .AllOf(
                     GameMatcher.Player, 
-                    GameMatcher.MoveSpeed)
+                    GameMatcher.MoveSpeed,
+                    GameMatcher.WorldRotation)
             );
         }
         
@@ -25,7 +27,7 @@ namespace Gameplay.Features.Player.Systems
         {
             foreach (var player in _players)
             {
-                player.ReplaceMoveVector(player.MoveSpeed * _input.MoveAxis * _time.DeltaTime);
+                player.ReplaceTargetMoveVector((player.WorldRotation * Vector3.forward).normalized * player.MoveSpeed * _input.GasAxis * _time.DeltaTime);
             }
         }
     }

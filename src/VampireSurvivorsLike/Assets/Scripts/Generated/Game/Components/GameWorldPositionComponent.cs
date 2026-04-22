@@ -34,10 +34,10 @@ public sealed partial class GameMatcher {
 public partial class GameEntity {
 
     public Gameplay.Features.Common.WorldPosition worldPosition { get { return (Gameplay.Features.Common.WorldPosition)GetComponent(GameComponentsLookup.WorldPosition); } }
-    public UnityEngine.Vector2 WorldPosition { get { return worldPosition.Value; } }
+    public UnityEngine.Vector3 WorldPosition { get { return worldPosition.Value; } }
     public bool hasWorldPosition { get { return HasComponent(GameComponentsLookup.WorldPosition); } }
 
-    public GameEntity AddWorldPosition(UnityEngine.Vector2 newValue) {
+    public GameEntity AddWorldPosition(UnityEngine.Vector3 newValue) {
         var index = GameComponentsLookup.WorldPosition;
         var component = (Gameplay.Features.Common.WorldPosition)CreateComponent(index, typeof(Gameplay.Features.Common.WorldPosition));
         component.Value = newValue;
@@ -45,7 +45,7 @@ public partial class GameEntity {
         return this;
     }
 
-    public GameEntity ReplaceWorldPosition(UnityEngine.Vector2 newValue) {
+    public GameEntity ReplaceWorldPosition(UnityEngine.Vector3 newValue) {
         var index = GameComponentsLookup.WorldPosition;
         var component = (Gameplay.Features.Common.WorldPosition)CreateComponent(index, typeof(Gameplay.Features.Common.WorldPosition));
         component.Value = newValue;

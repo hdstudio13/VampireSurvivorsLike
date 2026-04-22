@@ -6,33 +6,44 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Gameplay.Features.EntityDestroy;
-
 public static class GameComponentsLookup {
 
     public const int Id = 0;
     public const int Transform = 1;
     public const int WorldPosition = 2;
-    public const int Destroyed = 3;
-    public const int Destroying = 4;
-    public const int MoveSpeed = 5;
-    public const int MoveVector = 6;
-    public const int Player = 7;
-    public const int View = 8;
-    public const int ViewPath = 9;
+    public const int Alive = 3;
+    public const int Destroyed = 4;
+    public const int Destroying = 5;
+    public const int Acceleration = 6;
+    public const int Deacceleration = 7;
+    public const int MoveSpeed = 8;
+    public const int MoveVector = 9;
+    public const int TargetMoveVector = 10;
+    public const int Player = 11;
+    public const int DeltaRotation = 12;
+    public const int RotationSpeed = 13;
+    public const int WorldRotation = 14;
+    public const int View = 15;
+    public const int ViewPath = 16;
 
-    public const int TotalComponents = 10;
+    public const int TotalComponents = 17;
 
     public static readonly string[] componentNames = {
         "Id",
         "Transform",
         "WorldPosition",
+        "Alive",
         "Destroyed",
         "Destroying",
+        "Acceleration",
+        "Deacceleration",
         "MoveSpeed",
         "MoveVector",
+        "TargetMoveVector",
         "Player",
+        "DeltaRotation",
+        "RotationSpeed",
+        "WorldRotation",
         "View",
         "ViewPath"
     };
@@ -41,11 +52,18 @@ public static class GameComponentsLookup {
         typeof(Gameplay.Features.Common.Id),
         typeof(Gameplay.Features.Common.TransformComponent),
         typeof(Gameplay.Features.Common.WorldPosition),
-        typeof(Destroyed),
-        typeof(Destroying),
+        typeof(Gameplay.Features.EntityDestroy.Alive),
+        typeof(Gameplay.Features.EntityDestroy.Destroyed),
+        typeof(Gameplay.Features.EntityDestroy.Destroying),
+        typeof(Gameplay.Features.Movement.Acceleration),
+        typeof(Gameplay.Features.Movement.Deacceleration),
         typeof(Gameplay.Features.Movement.MoveSpeed),
         typeof(Gameplay.Features.Movement.MoveVector),
+        typeof(Gameplay.Features.Movement.TargetMoveVector),
         typeof(Gameplay.Features.Player.PlayerComponent),
+        typeof(Gameplay.Features.Rotation.DeltaRotation),
+        typeof(Gameplay.Features.Rotation.RotationSpeed),
+        typeof(Gameplay.Features.Rotation.WorldRotation),
         typeof(Gameplay.Features.View.View),
         typeof(Gameplay.Features.View.ViewPath)
     };

@@ -34,10 +34,10 @@ public sealed partial class GameMatcher {
 public partial class GameEntity {
 
     public Gameplay.Features.Movement.MoveVector moveVector { get { return (Gameplay.Features.Movement.MoveVector)GetComponent(GameComponentsLookup.MoveVector); } }
-    public UnityEngine.Vector2 MoveVector { get { return moveVector.Value; } }
+    public UnityEngine.Vector3 MoveVector { get { return moveVector.Value; } }
     public bool hasMoveVector { get { return HasComponent(GameComponentsLookup.MoveVector); } }
 
-    public GameEntity AddMoveVector(UnityEngine.Vector2 newValue) {
+    public GameEntity AddMoveVector(UnityEngine.Vector3 newValue) {
         var index = GameComponentsLookup.MoveVector;
         var component = (Gameplay.Features.Movement.MoveVector)CreateComponent(index, typeof(Gameplay.Features.Movement.MoveVector));
         component.Value = newValue;
@@ -45,7 +45,7 @@ public partial class GameEntity {
         return this;
     }
 
-    public GameEntity ReplaceMoveVector(UnityEngine.Vector2 newValue) {
+    public GameEntity ReplaceMoveVector(UnityEngine.Vector3 newValue) {
         var index = GameComponentsLookup.MoveVector;
         var component = (Gameplay.Features.Movement.MoveVector)CreateComponent(index, typeof(Gameplay.Features.Movement.MoveVector));
         component.Value = newValue;

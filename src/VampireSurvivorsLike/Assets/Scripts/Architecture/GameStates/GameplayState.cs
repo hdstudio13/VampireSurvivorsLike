@@ -2,6 +2,7 @@
 using Common;
 using Gameplay;
 using HDStateMachine;
+using Unity.Cinemachine;
 
 namespace Architecture.GameStates
 {
@@ -32,8 +33,6 @@ namespace Architecture.GameStates
             _gameplayFeature.ClearReactiveSystems();
             _gameplayFeature.Cleanup();
             _gameplayFeature.TearDown();
-            
-            _stateMachine.RemoveState<GameplayState>();
         }
 
         public void Update(float deltaTime)
