@@ -16,7 +16,7 @@ namespace Architecture.GameStates
         
         public void OnEnter()
         {
-            _stateChanger.ChangeState<GameplayState>();
+            _stateChanger.ChangeState<GameplayInitializationState>();
         }
 
         public void OnExit()

@@ -27,7 +27,7 @@ namespace Architecture.GameStates
         {
             _stateMachine.OnEnterState += state => this.Log($"Entered state: {state.GetType().Name}");
             _stateMachine.AddState(_instantiator.Instantiate<LaunchState>(_stateMachine));
-            _stateMachine.AddState(_instantiator.Instantiate<GameplayState>(_stateMachine));
+            _stateMachine.AddState(_instantiator.Instantiate<GameplayInitializationState>(_stateMachine));
             _stateMachine.ChangeState<LaunchState>();
         }
 

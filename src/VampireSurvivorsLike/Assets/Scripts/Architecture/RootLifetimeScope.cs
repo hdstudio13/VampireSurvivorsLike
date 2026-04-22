@@ -1,3 +1,4 @@
+using Architecture.Configs;
 using Architecture.EntityViews;
 using Architecture.EntityViews.GameContext;
 using Architecture.GameStates;
@@ -25,6 +26,7 @@ namespace Architecture
             // asset management
             builder.Register<AddressableAssetMediator>(Lifetime.Singleton);
             builder.Register<AddressableAssetProvider>(Lifetime.Scoped).As<IAssetProvider>();
+            builder.Register<ConfigProvider>(Lifetime.Scoped).As<IConfigProvider>();
         
             // identification service
             builder.Register<IdentifierService>(Lifetime.Singleton).As<IIdentifierService>();
@@ -37,15 +39,6 @@ namespace Architecture
             
             // game state machine
             builder.RegisterEntryPoint<GameController>();
-            
-            // contexts
-            builder.RegisterInstance(Contexts.sharedInstance.game);
-            
-            // system factory
-            builder.Register<SystemFactory>(Lifetime.Singleton).As<ISystemFactory>();
-            
-            // game entity view factory
-            builder.Register<GameEntityViewFactory>(Lifetime.Singleton).As<IGameEntityViewFactory>();
             
             // input
             builder.RegisterEntryPoint<InputService>();

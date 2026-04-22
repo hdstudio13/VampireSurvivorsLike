@@ -1,4 +1,5 @@
-﻿using Architecture.Input;
+﻿using Architecture.EntityViews;
+using Architecture.Input;
 using Architecture.Systems;
 using AssetManagement;
 using UnityEngine;
@@ -16,6 +17,15 @@ namespace Architecture
         {
             // windows
             builder.Register<IWindowFactory>(CreateWindowFactory, Lifetime.Singleton).Keyed(WindowFactoryType.Default);
+            
+            // contexts
+            builder.RegisterInstance(Contexts.sharedInstance.game);
+            
+            // system factory
+            builder.Register<SystemFactory>(Lifetime.Singleton).As<ISystemFactory>();
+            
+            // game entity view factory
+            builder.Register<GameEntityViewFactory>(Lifetime.Singleton).As<IGameEntityViewFactory>();
         }
     
         private WindowFactory CreateWindowFactory(IObjectResolver resolver)

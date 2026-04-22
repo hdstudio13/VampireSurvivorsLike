@@ -7,16 +7,16 @@ namespace Architecture.GameStates
 {
     public class GameplayState : IState
     {
-        private readonly IStateChanger _stateChanger;
+        private readonly IStateMachine _stateMachine;
         private readonly GameplayFeature _gameplayFeature;
         
         public GameplayState
         (
-            IStateChanger stateChanger,
+            IStateMachine stateMachine,
             ISystemFactory systemFactory
         )
         {
-            _stateChanger = stateChanger;
+            _stateMachine = stateMachine;
             _gameplayFeature = new GameplayFeature(systemFactory);
         }
         
@@ -32,6 +32,8 @@ namespace Architecture.GameStates
             _gameplayFeature.ClearReactiveSystems();
             _gameplayFeature.Cleanup();
             _gameplayFeature.TearDown();
+            
+            _stateMachine.RemoveState<GameplayState>();
         }
 
         public void Update(float deltaTime)
