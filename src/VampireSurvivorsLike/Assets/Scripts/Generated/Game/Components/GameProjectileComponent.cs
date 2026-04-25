@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherAttacking;
+    static Entitas.IMatcher<GameEntity> _matcherProjectile;
 
-    public static Entitas.IMatcher<GameEntity> Attacking {
+    public static Entitas.IMatcher<GameEntity> Projectile {
         get {
-            if (_matcherAttacking == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.Attacking);
+            if (_matcherProjectile == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.Projectile);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherAttacking = matcher;
+                _matcherProjectile = matcher;
             }
 
-            return _matcherAttacking;
+            return _matcherProjectile;
         }
     }
 }
@@ -33,18 +33,18 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Gameplay.Features.Attacking.Attacking attackingComponent = new Gameplay.Features.Attacking.Attacking();
+    static readonly Gameplay.Features.Projectiles.ProjectileComponent projectileComponent = new Gameplay.Features.Projectiles.ProjectileComponent();
 
-    public bool isAttacking {
-        get { return HasComponent(GameComponentsLookup.Attacking); }
+    public bool isProjectile {
+        get { return HasComponent(GameComponentsLookup.Projectile); }
         set {
-            if (value != isAttacking) {
-                var index = GameComponentsLookup.Attacking;
+            if (value != isProjectile) {
+                var index = GameComponentsLookup.Projectile;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : attackingComponent;
+                            : projectileComponent;
 
                     AddComponent(index, component);
                 } else {

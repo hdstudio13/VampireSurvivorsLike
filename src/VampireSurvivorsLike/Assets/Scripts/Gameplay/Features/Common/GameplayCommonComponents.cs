@@ -7,6 +7,4 @@ namespace Gameplay.Features.Common
     [Game] public class Id : IComponent { [PrimaryEntityIndex] public uint Value; }
     [Game] public class WorldPosition : IComponent { public Vector3 Value; }
     [Game] public class TransformComponent : IComponent { public Transform Value; }
-    [Game] public class Attacking : IComponent { }
-    [Game] public class AbleToAttack : IComponent { }
 }

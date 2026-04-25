@@ -33,7 +33,9 @@ namespace Gameplay.Features.Turrets
                 .AddView(view)
                 .AddWorldRotation(Quaternion.identity)
                 .AddRotationSpeed(20)
+                .AddAttackCoolDown(0.33f)
                 .With(x => x.isAbleToAttack = true)
+                .With(x => x.isProjectileAttack = true)
                 .With(x => x.isTurret = true)
                 .With(x => x.isPlayer = true);
             

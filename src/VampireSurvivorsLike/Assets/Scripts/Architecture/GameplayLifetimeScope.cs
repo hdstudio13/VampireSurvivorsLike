@@ -3,6 +3,7 @@ using Architecture.EntityViews;
 using Architecture.Input;
 using Architecture.Systems;
 using AssetManagement;
+using Gameplay.Features.Projectiles.Factory;
 using Unity.Cinemachine;
 using UnityEngine;
 using VContainer;
@@ -32,6 +33,9 @@ namespace Architecture
             
             // game entity view factory
             builder.Register<GameEntityViewFactory>(Lifetime.Singleton).As<IGameEntityViewFactory>();
+            
+            // projectile factory
+            builder.Register<ProjectileFactory>(Lifetime.Singleton).As<IProjectileFactory>();
             
             // camera
             builder.RegisterInstance(cinemachineCamera);

@@ -33,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Gameplay.Features.Common.AbleToAttack ableToAttackComponent = new Gameplay.Features.Common.AbleToAttack();
+    static readonly Gameplay.Features.Attacking.AbleToAttack ableToAttackComponent = new Gameplay.Features.Attacking.AbleToAttack();
 
     public bool isAbleToAttack {
         get { return HasComponent(GameComponentsLookup.AbleToAttack); }

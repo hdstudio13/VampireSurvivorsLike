@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 7695429041513308622}
   - component: {fileID: 9145508515360783048}
   m_Layer: 0
-  m_Name: Turret
+  m_Name: TurretView
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -139,8 +139,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Architecture.EntityViews.GameContext.GameEntityView
   monoRegistrars:
-  - {fileID: 7695429041513308622}
   - {fileID: 8530748613938587563}
+  - {fileID: 7695429041513308622}
+  - {fileID: 3929772857002945179}
 --- !u!114 &8530748613938587563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,6 +180,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gameplay.Features.Turrets.TurretSetuper
   view: {fileID: 2622550558564654233}
+--- !u!1 &1167962911648487527
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5986563443330449100}
+  m_Layer: 0
+  m_Name: _projectilePivot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5986563443330449100
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1167962911648487527}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.50000024, y: 0.49999952, z: 0.4999998, w: 0.5000004}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3100097350867158059}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 90}
 --- !u!1 &4205076734085016967
 GameObject:
   m_ObjectHideFlags: 0
@@ -389,6 +421,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6651902589359780007}
+  - {fileID: 5986563443330449100}
   m_Father: {fileID: 429524737382881458}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5574637884751043821
@@ -401,6 +434,7 @@ GameObject:
   m_Component:
   - component: {fileID: 429524737382881458}
   - component: {fileID: 5442641781216470378}
+  - component: {fileID: 3929772857002945179}
   m_Layer: 0
   m_Name: Root
   m_TagString: Untagged
@@ -450,6 +484,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3929772857002945179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5574637884751043821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 571044907c804aa99bcba49819057749, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Gameplay.Features.Turrets.TurretAnimator
+  view: {fileID: 2622550558564654233}
+  projectileSpawnPivot1: {fileID: 7078344589591919859}
+  projectileSpawnPivot2: {fileID: 5986563443330449100}
 --- !u!1 &6204683694446067650
 GameObject:
   m_ObjectHideFlags: 0
@@ -570,8 +619,40 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8078863032522884086}
+  - {fileID: 7078344589591919859}
   m_Father: {fileID: 429524737382881458}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8215271783235144878
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7078344589591919859}
+  m_Layer: 0
+  m_Name: _projectilePivot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7078344589591919859
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8215271783235144878}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.50000024, y: 0.49999952, z: 0.4999998, w: 0.5000004}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7648246173757335148}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 90}
 --- !u!1 &8403512596204426742
 GameObject:
   m_ObjectHideFlags: 0
