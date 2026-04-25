@@ -7,7 +7,7 @@ namespace Architecture.EntityViews
 {
     public abstract class EntityRegistrarBehaviour<TEntity> : MonoBehaviour, IEntityRegistrar<TEntity> where TEntity : Entity
     {
-        protected void Reset()
+        protected virtual void Reset()
         {
             var entityView = GetComponentInParent<EntityView<TEntity>>();
             entityView?.DebugFindAllRegistrars();

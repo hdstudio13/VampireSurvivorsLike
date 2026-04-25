@@ -8,27 +8,34 @@
 //------------------------------------------------------------------------------
 public static class GameComponentsLookup {
 
-    public const int Id = 0;
-    public const int Transform = 1;
-    public const int WorldPosition = 2;
-    public const int Alive = 3;
-    public const int Destroyed = 4;
-    public const int Destroying = 5;
-    public const int Acceleration = 6;
-    public const int Deacceleration = 7;
-    public const int MoveSpeed = 8;
-    public const int MoveVector = 9;
-    public const int TargetMoveVector = 10;
-    public const int Player = 11;
-    public const int DeltaRotation = 12;
-    public const int RotationSpeed = 13;
-    public const int WorldRotation = 14;
-    public const int View = 15;
-    public const int ViewPath = 16;
+    public const int Animator = 0;
+    public const int AbleToAttack = 1;
+    public const int Attacking = 2;
+    public const int Id = 3;
+    public const int Transform = 4;
+    public const int WorldPosition = 5;
+    public const int Alive = 6;
+    public const int Destroyed = 7;
+    public const int Destroying = 8;
+    public const int Acceleration = 9;
+    public const int Deacceleration = 10;
+    public const int MoveSpeed = 11;
+    public const int MoveVector = 12;
+    public const int TargetMoveVector = 13;
+    public const int Player = 14;
+    public const int DeltaRotation = 15;
+    public const int RotationSpeed = 16;
+    public const int WorldRotation = 17;
+    public const int Turret = 18;
+    public const int View = 19;
+    public const int ViewPath = 20;
 
-    public const int TotalComponents = 17;
+    public const int TotalComponents = 21;
 
     public static readonly string[] componentNames = {
+        "Animator",
+        "AbleToAttack",
+        "Attacking",
         "Id",
         "Transform",
         "WorldPosition",
@@ -44,11 +51,15 @@ public static class GameComponentsLookup {
         "DeltaRotation",
         "RotationSpeed",
         "WorldRotation",
+        "Turret",
         "View",
         "ViewPath"
     };
 
     public static readonly System.Type[] componentTypes = {
+        typeof(Gameplay.Features.Animations.AnimatorComponent),
+        typeof(Gameplay.Features.Common.AbleToAttack),
+        typeof(Gameplay.Features.Common.Attacking),
         typeof(Gameplay.Features.Common.Id),
         typeof(Gameplay.Features.Common.TransformComponent),
         typeof(Gameplay.Features.Common.WorldPosition),
@@ -64,6 +75,7 @@ public static class GameComponentsLookup {
         typeof(Gameplay.Features.Rotation.DeltaRotation),
         typeof(Gameplay.Features.Rotation.RotationSpeed),
         typeof(Gameplay.Features.Rotation.WorldRotation),
+        typeof(Gameplay.Features.Turrets.TurretComponent),
         typeof(Gameplay.Features.View.View),
         typeof(Gameplay.Features.View.ViewPath)
     };

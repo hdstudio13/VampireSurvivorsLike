@@ -1,4 +1,5 @@
-﻿using Architecture.EntityViews;
+﻿using Architecture.CameraManagement;
+using Architecture.EntityViews;
 using Architecture.Input;
 using Architecture.Systems;
 using AssetManagement;
@@ -13,6 +14,8 @@ namespace Architecture
     public class GameplayLifetimeScope : LifetimeScope
     {
         [SerializeField] private Transform windowsRoot;
+        [Space]
+        [SerializeField] private UnityEngine.Camera mainCamera;
         [SerializeField] private CinemachineCamera cinemachineCamera;
         [SerializeField] private CinemachineBrain cinemachineBrain;
 
@@ -33,6 +36,8 @@ namespace Architecture
             // camera
             builder.RegisterInstance(cinemachineCamera);
             builder.RegisterInstance(cinemachineBrain);
+            builder.RegisterInstance(mainCamera);
+            builder.Register<CameraService>(Lifetime.Singleton).As<ICameraService>();
         }
     
         private WindowFactory CreateWindowFactory(IObjectResolver resolver)

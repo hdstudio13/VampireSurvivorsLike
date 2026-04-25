@@ -6,5 +6,7 @@ namespace Architecture.Input
     {
         float GasAxis { get; }
         float TurnAxis { get; }
+        Vector2 Aim { get; }
+        bool IsAttacking { get; }
     }
 }

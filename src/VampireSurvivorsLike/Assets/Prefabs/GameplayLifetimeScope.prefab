@@ -132,6 +132,7 @@ MonoBehaviour:
   autoRun: 1
   autoInjectGameObjects: []
   windowsRoot: {fileID: 7637676775793117640}
+  mainCamera: {fileID: 5535128663965162313}
   cinemachineCamera: {fileID: 3160844994004304673}
   cinemachineBrain: {fileID: 2725424350184191497}
 --- !u!1 &1959542612800209148

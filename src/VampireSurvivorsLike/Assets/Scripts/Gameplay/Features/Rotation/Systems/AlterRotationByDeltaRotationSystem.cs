@@ -20,7 +20,6 @@ namespace Gameplay.Features.Rotation.Systems
             foreach (var entity in _rotations.GetEntities(_buffer))
             {
                 entity.ReplaceWorldRotation(entity.WorldRotation * entity.DeltaRotation);
-                entity.RemoveDeltaRotation();
             }
         }
     }
