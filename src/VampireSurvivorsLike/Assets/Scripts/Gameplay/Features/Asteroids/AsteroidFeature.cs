@@ -7,7 +7,9 @@ namespace Gameplay.Features.Asteroids
     {
         public AsteroidFeature(ISystemFactory factory)
         {
-            Add(factory.Create<InitializeAsteroidsSystem>());
+            Add(factory.Create<AsteroidSpawnSystem>());
+            Add(factory.Create<AsteroidCullingSystem>());
+            Add(factory.Create<AsteroidsCollisionHandleSystem>());
         }
     }
 }

@@ -19,7 +19,8 @@ namespace Gameplay.Features.EntityCollisions.Systems
                     GameMatcher.WorldPosition,
                     GameMatcher.TargetEntities,
                     GameMatcher.LayerMask,
-                    GameMatcher.Alive));
+                    GameMatcher.Alive)
+                .NoneOf(GameMatcher.CollisionCooldownTimer));
         }
         
         public void Execute()

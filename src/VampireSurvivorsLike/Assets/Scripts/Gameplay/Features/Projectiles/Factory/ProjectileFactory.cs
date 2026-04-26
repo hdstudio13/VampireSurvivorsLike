@@ -26,12 +26,15 @@ namespace Gameplay.Features.Projectiles.Factory
             return _context.CreateEntity()
                 .AddId(_identifier.Next())
                 .AddViewPath("EntityViews/ProjectileView.prefab")
+                .AddDestroyViewPath("EntityViews/BlueProjectileDestroyView.prefab")
                 .AddWorldPosition(position)
                 .AddWorldRotation(Quaternion.LookRotation(direction))
                 .AddMoveSpeed(20)
                 .AddDestroyTimer(5)
                 .AddDamage(20)
                 .SetAlive()
+                .AddMoveDirection(direction.normalized)
+                .With(x => x.isMoving = true)
                 .With(x => x.isProjectile = true);
         }
     }

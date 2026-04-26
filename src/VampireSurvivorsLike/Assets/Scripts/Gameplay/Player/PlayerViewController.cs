@@ -31,7 +31,7 @@ namespace Gameplay.Player
         {
             if (_entity != null)
             {
-                if (_entity.hasTargetMoveVector && _entity.TargetMoveVector.magnitude > 0.00001f)
+                if (_entity.isMoving)
                 {
                     if (!_fireOn)
                     {

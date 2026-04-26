@@ -11,7 +11,11 @@ namespace Gameplay.Features.Projectiles.Systems
         private IGroup<GameEntity> _entities;
         private readonly List<GameEntity> _buffer = new(32);
 
-        public ProjectileCollisionHandleSystem(GameContext context, IEffectsFactory effects)
+        public ProjectileCollisionHandleSystem
+        (
+            GameContext context, 
+            IEffectsFactory effects
+        )
         {
             _effects = effects;
             _entities = context.GetGroup(GameMatcher

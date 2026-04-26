@@ -5,6 +5,7 @@ using Architecture.Input;
 using Architecture.Systems;
 using AssetManagement;
 using Gameplay.Features.Asteroids.Factory;
+using Gameplay.Features.Common.Factories;
 using Gameplay.Features.Effects.Factory;
 using Gameplay.Features.Projectiles.Factory;
 using Unity.Cinemachine;
@@ -55,6 +56,9 @@ namespace Architecture
             
             // asteroid factory
             builder.Register<AsteroidFactory>(Lifetime.Singleton).As<IAsteroidFactory>();
+            
+            // hit vfx factory
+            builder.Register<HitVFXFactory>(Lifetime.Singleton).As<IHitVFXFactory>();
         }
     
         private WindowFactory CreateWindowFactory(IObjectResolver resolver)

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Entitas;
 using Entitas.CodeGeneration.Attributes;
+using Gameplay.Features.Common.Factories;
 using UnityEngine;
 
 namespace Gameplay.Features.Common
@@ -10,4 +11,5 @@ namespace Gameplay.Features.Common
     [Game] public class TransformComponent : IComponent { public Transform Value; }
     [Game] public class Colliders : IComponent { public List<Collider> Value; }
     [Game] public class TargetEntities : IComponent { public List<GameEntity> Value; }
+    [Game] public class HitVFX : IComponent { public HitVFXType Value; }
 }

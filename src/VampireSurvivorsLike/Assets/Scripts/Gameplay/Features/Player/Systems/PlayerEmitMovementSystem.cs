@@ -8,13 +8,11 @@ namespace Gameplay.Features.Player.Systems
     public class PlayerEmitMovementSystem : IExecuteSystem
     {
         private readonly IInputService _input;
-        private readonly ITimeService _time;
         private readonly IGroup<GameEntity> _players;
 
-        public PlayerEmitMovementSystem(GameContext context, IInputService input, ITimeService time)
+        public PlayerEmitMovementSystem(GameContext context, IInputService input)
         {
             _input = input;
-            _time = time;
             _players = context.GetGroup(GameMatcher
                 .AllOf(
                     GameMatcher.Player, 
@@ -27,7 +25,8 @@ namespace Gameplay.Features.Player.Systems
         {
             foreach (var player in _players)
             {
-                player.ReplaceTargetMoveVector((player.WorldRotation * Vector3.forward).normalized * player.MoveSpeed * _input.GasAxis * _time.DeltaTime);
+                player.ReplaceMoveDirection((player.WorldRotation * Vector3.forward).normalized);
+                player.isMoving = _input.GasAxis > 0f;
             }
         }
     }

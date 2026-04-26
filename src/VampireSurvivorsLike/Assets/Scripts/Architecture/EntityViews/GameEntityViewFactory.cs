@@ -16,11 +16,21 @@ namespace Architecture.EntityViews
         private readonly IObjectResolver _resolver;
         private readonly Dictionary<string, ObjectPool<GameEntityView>> _pools = new();
         private readonly Dictionary<GameEntityView, string> _views = new();
+        private readonly Vector3 _farAway = new Vector3(9999,9999,9999);
+
+        private readonly Transform _activeViewsParent;
+        private readonly Transform _pooledViewsParent;
         
         public GameEntityViewFactory(IAssetProvider assetProvider,IObjectResolver resolver)
         {
             _assetProvider = assetProvider;
             _resolver = resolver;
+
+            var obj = new GameObject("[EntityViews]");
+            _activeViewsParent = new GameObject("[Active]").transform;
+            _activeViewsParent.SetParent(obj.transform);
+            _pooledViewsParent = new GameObject("[Pooled]").transform;
+            _pooledViewsParent.SetParent(obj.transform);
         }
 
         public GameEntityView Create(string path)
@@ -70,6 +80,8 @@ namespace Architecture.EntityViews
             _views.Remove(view);
             view.gameObject.name = $"{view.gameObject.name}{IN_POOL_LABEL}";
             view.gameObject.SetActive(false);
+            view.gameObject.transform.position = _farAway;
+            view.transform.SetParent(_pooledViewsParent);
             view.RemoveEntity();
         }
         
@@ -77,6 +89,7 @@ namespace Architecture.EntityViews
         {
             view.gameObject.name = view.gameObject.name.Replace(IN_POOL_LABEL, "");
             view.gameObject.SetActive(true);
+            view.transform.SetParent(_activeViewsParent);
             _views[view] = assetPath;
         }
         
@@ -88,8 +101,8 @@ namespace Architecture.EntityViews
                 this.LogError($"Failed to load prefab at path: {path}");
                 return null;
             }
-
-            var gameObject = Object.Instantiate(prefab);
+            
+            var gameObject = Object.Instantiate(prefab, _farAway, Quaternion.identity);
             GameEntityView viewObject = gameObject.GetComponent<GameEntityView>();
             if (viewObject == null)
             {

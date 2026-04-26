@@ -21,18 +21,19 @@ namespace Gameplay
     {
         public GameplayFeature(ISystemFactory factory)
         {
+            Add(factory.Create<CollisionCheckFeature>());
+            
             Add(factory.Create<PlayerFeature>());
             Add(factory.Create<TurretFeature>());
             Add(factory.Create<ProjectileFeature>());
             Add(factory.Create<AsteroidFeature>());
-            Add(factory.Create<MovementFeature>());
             Add(factory.Create<RotationFeature>());
             Add(factory.Create<ViewFeature>());
             Add(factory.Create<AnimationFeature>());
             Add(factory.Create<AttackFeature>());
             Add(factory.Create<EffectFeature>());
-            Add(factory.Create<CollisionCheckFeature>());
             Add(factory.Create<HealthFeature>());
+            Add(factory.Create<MovementFeature>());
             Add(factory.Create<DestroyFeature>());
         }
     }

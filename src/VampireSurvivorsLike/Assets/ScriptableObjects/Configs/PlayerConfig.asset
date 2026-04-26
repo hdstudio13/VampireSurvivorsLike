@@ -18,7 +18,7 @@ MonoBehaviour:
     m_SubObjectType: 
     m_SubObjectGUID: 
     m_EditorAssetChanged: 0
-  moveSpeed: 5
+  moveSpeed: 10
   rotationSpeed: 100
-  acceleration: 0.05
-  deacceleration: 0.0125
+  acceleration: 5
+  deacceleration: 10

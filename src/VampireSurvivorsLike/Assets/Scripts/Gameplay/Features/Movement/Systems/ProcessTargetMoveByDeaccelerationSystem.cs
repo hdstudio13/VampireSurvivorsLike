@@ -14,19 +14,19 @@ namespace Gameplay.Features.Movement.Systems
             _timeService = timeService;
             _entities = context.GetGroup(GameMatcher
                 .AllOf(
-                    GameMatcher.TargetMoveVector,
                     GameMatcher.Deacceleration,
-                    GameMatcher.MoveVector));
+                    GameMatcher.MoveSpeed)
+                .NoneOf(
+                    GameMatcher.Moving));
         }
         
         public void Execute()
         {
             foreach (var entity in _entities)
             {
-                if (entity.TargetMoveVector.magnitude < entity.MoveVector.magnitude)
-                {
-                    entity.ReplaceMoveVector(Vector3.MoveTowards(entity.MoveVector, entity.TargetMoveVector, entity.Deacceleration * _timeService.DeltaTime));
-                }
+                var moveSpeed = entity.MoveSpeed - entity.Deacceleration * _timeService.DeltaTime;
+                moveSpeed = Mathf.Max(moveSpeed, 0);
+                entity.ReplaceMoveSpeed(moveSpeed);
             }
         }
     }

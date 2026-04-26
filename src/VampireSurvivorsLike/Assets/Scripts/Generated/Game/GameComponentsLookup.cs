@@ -15,40 +15,44 @@ public static class GameComponentsLookup {
     public const int AttackCoolDownTimer = 4;
     public const int Attacking = 5;
     public const int Colliders = 6;
-    public const int Id = 7;
-    public const int TargetEntities = 8;
-    public const int Transform = 9;
-    public const int WorldPosition = 10;
-    public const int Damage = 11;
-    public const int Effect = 12;
-    public const int Owner = 13;
-    public const int Target = 14;
-    public const int LayerMask = 15;
-    public const int PerformingCollisionCheck = 16;
-    public const int Radius = 17;
-    public const int Alive = 18;
-    public const int Destroyed = 19;
-    public const int Destroying = 20;
-    public const int DestroyTimer = 21;
-    public const int CurrentHealth = 22;
-    public const int Health = 23;
-    public const int Acceleration = 24;
-    public const int Deacceleration = 25;
-    public const int MoveSpeed = 26;
-    public const int MoveVector = 27;
-    public const int TargetMoveVector = 28;
-    public const int Player = 29;
-    public const int ProjectileAttack = 30;
-    public const int Projectile = 31;
-    public const int ProjectilePivot = 32;
-    public const int DeltaRotation = 33;
-    public const int RotationSpeed = 34;
-    public const int WorldRotation = 35;
-    public const int Turret = 36;
-    public const int View = 37;
-    public const int ViewPath = 38;
+    public const int HitVFX = 7;
+    public const int Id = 8;
+    public const int TargetEntities = 9;
+    public const int Transform = 10;
+    public const int WorldPosition = 11;
+    public const int Damage = 12;
+    public const int Effect = 13;
+    public const int Owner = 14;
+    public const int Target = 15;
+    public const int CollisionCooldownTimer = 16;
+    public const int LayerMask = 17;
+    public const int PerformingCollisionCheck = 18;
+    public const int Radius = 19;
+    public const int Alive = 20;
+    public const int Destroyed = 21;
+    public const int Destroying = 22;
+    public const int DestroyTimer = 23;
+    public const int CurrentHealth = 24;
+    public const int Health = 25;
+    public const int Acceleration = 26;
+    public const int Deacceleration = 27;
+    public const int MaxMoveSpeed = 28;
+    public const int MoveDirection = 29;
+    public const int MoveSpeed = 30;
+    public const int Moving = 31;
+    public const int Player = 32;
+    public const int ProjectileAttack = 33;
+    public const int Projectile = 34;
+    public const int ProjectilePivot = 35;
+    public const int DeltaRotation = 36;
+    public const int RotationSpeed = 37;
+    public const int WorldRotation = 38;
+    public const int Turret = 39;
+    public const int DestroyViewPath = 40;
+    public const int View = 41;
+    public const int ViewPath = 42;
 
-    public const int TotalComponents = 39;
+    public const int TotalComponents = 43;
 
     public static readonly string[] componentNames = {
         "Animator",
@@ -58,6 +62,7 @@ public static class GameComponentsLookup {
         "AttackCoolDownTimer",
         "Attacking",
         "Colliders",
+        "HitVFX",
         "Id",
         "TargetEntities",
         "Transform",
@@ -66,6 +71,7 @@ public static class GameComponentsLookup {
         "Effect",
         "Owner",
         "Target",
+        "CollisionCooldownTimer",
         "LayerMask",
         "PerformingCollisionCheck",
         "Radius",
@@ -77,9 +83,10 @@ public static class GameComponentsLookup {
         "Health",
         "Acceleration",
         "Deacceleration",
+        "MaxMoveSpeed",
+        "MoveDirection",
         "MoveSpeed",
-        "MoveVector",
-        "TargetMoveVector",
+        "Moving",
         "Player",
         "ProjectileAttack",
         "Projectile",
@@ -88,6 +95,7 @@ public static class GameComponentsLookup {
         "RotationSpeed",
         "WorldRotation",
         "Turret",
+        "DestroyViewPath",
         "View",
         "ViewPath"
     };
@@ -100,6 +108,7 @@ public static class GameComponentsLookup {
         typeof(Gameplay.Features.Attacking.AttackCoolDownTimer),
         typeof(Gameplay.Features.Attacking.Attacking),
         typeof(Gameplay.Features.Common.Colliders),
+        typeof(Gameplay.Features.Common.HitVFX),
         typeof(Gameplay.Features.Common.Id),
         typeof(Gameplay.Features.Common.TargetEntities),
         typeof(Gameplay.Features.Common.TransformComponent),
@@ -108,6 +117,7 @@ public static class GameComponentsLookup {
         typeof(Gameplay.Features.Effects.EffectComponent),
         typeof(Gameplay.Features.Effects.Owner),
         typeof(Gameplay.Features.Effects.Target),
+        typeof(Gameplay.Features.EntityCollisions.CollisionCooldownTimer),
         typeof(Gameplay.Features.EntityCollisions.LayerMaskComponent),
         typeof(Gameplay.Features.EntityCollisions.PerformingCollisionCheck),
         typeof(Gameplay.Features.EntityCollisions.Radius),
@@ -119,9 +129,10 @@ public static class GameComponentsLookup {
         typeof(Gameplay.Features.Health.Health),
         typeof(Gameplay.Features.Movement.Acceleration),
         typeof(Gameplay.Features.Movement.Deacceleration),
+        typeof(Gameplay.Features.Movement.MaxMoveSpeed),
+        typeof(Gameplay.Features.Movement.MoveDirection),
         typeof(Gameplay.Features.Movement.MoveSpeed),
-        typeof(Gameplay.Features.Movement.MoveVector),
-        typeof(Gameplay.Features.Movement.TargetMoveVector),
+        typeof(Gameplay.Features.Movement.Moving),
         typeof(Gameplay.Features.Player.PlayerComponent),
         typeof(Gameplay.Features.Projectiles.ProjectileAttack),
         typeof(Gameplay.Features.Projectiles.ProjectileComponent),
@@ -130,6 +141,7 @@ public static class GameComponentsLookup {
         typeof(Gameplay.Features.Rotation.RotationSpeed),
         typeof(Gameplay.Features.Rotation.WorldRotation),
         typeof(Gameplay.Features.Turrets.TurretComponent),
+        typeof(Gameplay.Features.View.DestroyViewPath),
         typeof(Gameplay.Features.View.View),
         typeof(Gameplay.Features.View.ViewPath)
     };

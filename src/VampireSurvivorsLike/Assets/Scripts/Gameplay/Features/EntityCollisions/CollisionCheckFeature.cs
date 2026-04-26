@@ -8,6 +8,8 @@ namespace Gameplay.Features.EntityCollisions
         public CollisionCheckFeature(ISystemFactory factory)
         {
             Add(factory.Create<SphereCollisionCheckSystem>());
+            Add(factory.Create<CollisionCooldownTimerSystem>());
+            Add(factory.Create<CleanupCollisionSystem>());
         }
     }
 }
