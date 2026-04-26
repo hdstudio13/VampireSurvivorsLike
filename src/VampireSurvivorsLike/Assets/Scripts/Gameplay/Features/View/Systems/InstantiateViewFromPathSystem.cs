@@ -21,11 +21,11 @@ namespace Gameplay.Features.View.Systems
             _factory = factory;
             _entities = context.GetGroup(GameMatcher
                 .AllOf(
-                    GameMatcher.ViewPath
+                    GameMatcher.ViewPath,
+                    GameMatcher.Alive
                 ).NoneOf
                 (
-                    GameMatcher.View,
-                    GameMatcher.Destroying
+                    GameMatcher.View
                 ));
         }
         

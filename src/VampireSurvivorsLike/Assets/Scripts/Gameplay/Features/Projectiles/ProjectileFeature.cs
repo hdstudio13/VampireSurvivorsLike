@@ -8,6 +8,7 @@ namespace Gameplay.Features.Projectiles
         public ProjectileFeature(ISystemFactory factory)
         {
             Add(factory.Create<MoveProjectilesForwardSystem>());
+            Add(factory.Create<ProjectileCollisionHandleSystem>());
         }
     }
 }

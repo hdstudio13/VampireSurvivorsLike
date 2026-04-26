@@ -2,6 +2,7 @@
 using Architecture.Identification;
 using Common;
 using Entitas;
+using Gameplay.Features.EntityDestroy;
 using Gameplay.Player;
 using UnityEngine;
 
@@ -39,7 +40,8 @@ namespace Gameplay.Features.Player.Systems
                 .AddRotationSpeed(playerConfig.RotationSpeed)
                 .AddWorldRotation(Quaternion.identity)
                 .AddAcceleration(playerConfig.Acceleration)
-                .AddDeacceleration(playerConfig.Deacceleration);
+                .AddDeacceleration(playerConfig.Deacceleration)
+                .SetAlive();
         }
     }
 }

@@ -7,6 +7,7 @@ namespace Gameplay.Features.EntityDestroy
     {
         public DestroyFeature(ISystemFactory factory)
         {
+            Add(factory.Create<ProcessDestroyTimerSystem>());
             Add(factory.Create<ValidateDestroyingSystem>());
             Add(factory.Create<CleanUpDestroyedEntitiesSystem>());
         }

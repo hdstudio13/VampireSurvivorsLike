@@ -1,8 +1,11 @@
 ﻿using Architecture.CameraManagement;
+using Architecture.EntityPhysics;
 using Architecture.EntityViews;
 using Architecture.Input;
 using Architecture.Systems;
 using AssetManagement;
+using Gameplay.Features.Asteroids.Factory;
+using Gameplay.Features.Effects.Factory;
 using Gameplay.Features.Projectiles.Factory;
 using Unity.Cinemachine;
 using UnityEngine;
@@ -42,6 +45,16 @@ namespace Architecture
             builder.RegisterInstance(cinemachineBrain);
             builder.RegisterInstance(mainCamera);
             builder.Register<CameraService>(Lifetime.Singleton).As<ICameraService>();
+            
+            // physics
+            builder.Register<CollisionRegistry>(Lifetime.Singleton).As<ICollisionRegistry>();
+            builder.Register<PhysicsService>(Lifetime.Singleton).As<IPhysicsService>();
+            
+            // effects factory
+            builder.Register<EffectsFactory>(Lifetime.Singleton).As<IEffectsFactory>();
+            
+            // asteroid factory
+            builder.Register<AsteroidFactory>(Lifetime.Singleton).As<IAsteroidFactory>();
         }
     
         private WindowFactory CreateWindowFactory(IObjectResolver resolver)

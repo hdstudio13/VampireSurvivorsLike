@@ -16,8 +16,7 @@ namespace Gameplay.Features.View.Systems
             _visible = context.GetGroup(GameMatcher.AllOf
                 (
                     GameMatcher.View,
-                    GameMatcher.Destroying)
-            );
+                    GameMatcher.Destroying));
         }
         
         public void Cleanup()

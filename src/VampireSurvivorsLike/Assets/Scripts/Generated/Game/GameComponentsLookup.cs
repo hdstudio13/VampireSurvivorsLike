@@ -9,46 +9,72 @@
 public static class GameComponentsLookup {
 
     public const int Animator = 0;
-    public const int AbleToAttack = 1;
-    public const int AttackCoolDown = 2;
-    public const int AttackCoolDownTimer = 3;
-    public const int Attacking = 4;
-    public const int Id = 5;
-    public const int Transform = 6;
-    public const int WorldPosition = 7;
-    public const int Alive = 8;
-    public const int Destroyed = 9;
-    public const int Destroying = 10;
-    public const int Acceleration = 11;
-    public const int Deacceleration = 12;
-    public const int MoveSpeed = 13;
-    public const int MoveVector = 14;
-    public const int TargetMoveVector = 15;
-    public const int Player = 16;
-    public const int ProjectileAttack = 17;
-    public const int Projectile = 18;
-    public const int ProjectilePivot = 19;
-    public const int DeltaRotation = 20;
-    public const int RotationSpeed = 21;
-    public const int WorldRotation = 22;
-    public const int Turret = 23;
-    public const int View = 24;
-    public const int ViewPath = 25;
+    public const int Asteroid = 1;
+    public const int AbleToAttack = 2;
+    public const int AttackCoolDown = 3;
+    public const int AttackCoolDownTimer = 4;
+    public const int Attacking = 5;
+    public const int Colliders = 6;
+    public const int Id = 7;
+    public const int TargetEntities = 8;
+    public const int Transform = 9;
+    public const int WorldPosition = 10;
+    public const int Damage = 11;
+    public const int Effect = 12;
+    public const int Owner = 13;
+    public const int Target = 14;
+    public const int LayerMask = 15;
+    public const int PerformingCollisionCheck = 16;
+    public const int Radius = 17;
+    public const int Alive = 18;
+    public const int Destroyed = 19;
+    public const int Destroying = 20;
+    public const int DestroyTimer = 21;
+    public const int CurrentHealth = 22;
+    public const int Health = 23;
+    public const int Acceleration = 24;
+    public const int Deacceleration = 25;
+    public const int MoveSpeed = 26;
+    public const int MoveVector = 27;
+    public const int TargetMoveVector = 28;
+    public const int Player = 29;
+    public const int ProjectileAttack = 30;
+    public const int Projectile = 31;
+    public const int ProjectilePivot = 32;
+    public const int DeltaRotation = 33;
+    public const int RotationSpeed = 34;
+    public const int WorldRotation = 35;
+    public const int Turret = 36;
+    public const int View = 37;
+    public const int ViewPath = 38;
 
-    public const int TotalComponents = 26;
+    public const int TotalComponents = 39;
 
     public static readonly string[] componentNames = {
         "Animator",
+        "Asteroid",
         "AbleToAttack",
         "AttackCoolDown",
         "AttackCoolDownTimer",
         "Attacking",
+        "Colliders",
         "Id",
+        "TargetEntities",
         "Transform",
         "WorldPosition",
+        "Damage",
+        "Effect",
+        "Owner",
+        "Target",
+        "LayerMask",
+        "PerformingCollisionCheck",
+        "Radius",
         "Alive",
         "Destroyed",
         "Destroying",
+        "DestroyTimer",
+        "CurrentHealth",
+        "Health",
         "Acceleration",
         "Deacceleration",
         "MoveSpeed",
@@ -68,16 +94,29 @@ public static class GameComponentsLookup {
 
     public static readonly System.Type[] componentTypes = {
         typeof(Gameplay.Features.Animations.AnimatorComponent),
+        typeof(Gameplay.Features.Asteroids.Asteroid),
         typeof(Gameplay.Features.Attacking.AbleToAttack),
         typeof(Gameplay.Features.Attacking.AttackCoolDown),
         typeof(Gameplay.Features.Attacking.AttackCoolDownTimer),
         typeof(Gameplay.Features.Attacking.Attacking),
+        typeof(Gameplay.Features.Common.Colliders),
         typeof(Gameplay.Features.Common.Id),
+        typeof(Gameplay.Features.Common.TargetEntities),
         typeof(Gameplay.Features.Common.TransformComponent),
         typeof(Gameplay.Features.Common.WorldPosition),
+        typeof(Gameplay.Features.Effects.Damage),
+        typeof(Gameplay.Features.Effects.EffectComponent),
+        typeof(Gameplay.Features.Effects.Owner),
+        typeof(Gameplay.Features.Effects.Target),
+        typeof(Gameplay.Features.EntityCollisions.LayerMaskComponent),
+        typeof(Gameplay.Features.EntityCollisions.PerformingCollisionCheck),
+        typeof(Gameplay.Features.EntityCollisions.Radius),
         typeof(Gameplay.Features.EntityDestroy.Alive),
         typeof(Gameplay.Features.EntityDestroy.Destroyed),
         typeof(Gameplay.Features.EntityDestroy.Destroying),
+        typeof(Gameplay.Features.EntityDestroy.DestroyTimer),
+        typeof(Gameplay.Features.Health.CurrentHealth),
+        typeof(Gameplay.Features.Health.Health),
         typeof(Gameplay.Features.Movement.Acceleration),
         typeof(Gameplay.Features.Movement.Deacceleration),
         typeof(Gameplay.Features.Movement.MoveSpeed),

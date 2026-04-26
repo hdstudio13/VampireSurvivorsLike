@@ -1,6 +1,7 @@
 ﻿using Architecture.EntityViews;
 using Architecture.Identification;
 using Common;
+using Gameplay.Features.EntityDestroy;
 using UnityEngine;
 
 namespace Gameplay.Features.Projectiles.Factory
@@ -28,6 +29,9 @@ namespace Gameplay.Features.Projectiles.Factory
                 .AddWorldPosition(position)
                 .AddWorldRotation(Quaternion.LookRotation(direction))
                 .AddMoveSpeed(20)
+                .AddDestroyTimer(5)
+                .AddDamage(20)
+                .SetAlive()
                 .With(x => x.isProjectile = true);
         }
     }
