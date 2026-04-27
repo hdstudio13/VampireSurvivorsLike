@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Architecture;
 using Entitas;
 using Gameplay.Features.Common.Factories;
 using UnityEngine;
@@ -99,14 +100,14 @@ namespace Gameplay.Features.Asteroids.Systems
 
             Vector3 asteroidVelocityAfter = asteroidVelocity - impulse * normal;
             if (asteroidVelocityAfter.sqrMagnitude > MinVectorSqrMagnitude)
-                asteroid.ReplaceMoveDirection(asteroidVelocityAfter.normalized);
+                asteroid.ReplaceMoveDirection(asteroidVelocityAfter.normalized.Flatten());
 
             if (!targetEntity.hasMoveDirection)
                 return;
 
             Vector3 targetVelocityAfter = targetVelocity + impulse * normal;
             if (targetVelocityAfter.sqrMagnitude > MinVectorSqrMagnitude)
-                targetEntity.ReplaceMoveDirection(targetVelocityAfter.normalized);
+                targetEntity.ReplaceMoveDirection(targetVelocityAfter.normalized.Flatten());
         }
 
         private static void ResolvePenetration(GameEntity asteroid, GameEntity targetEntity, Vector3 normal)
@@ -127,7 +128,7 @@ namespace Gameplay.Features.Asteroids.Systems
             float asteroidShare = targetCanMove ? 0.5f : 1f;
             float targetShare = targetCanMove ? 0.5f : 0f;
 
-            Vector3 correction = normal * penetration;
+            Vector3 correction = normal.Flatten() * penetration;
             asteroid.ReplaceWorldPosition(asteroid.WorldPosition - correction * asteroidShare);
 
             if (targetShare > 0f)

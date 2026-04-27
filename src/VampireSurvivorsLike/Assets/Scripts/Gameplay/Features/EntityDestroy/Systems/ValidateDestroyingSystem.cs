@@ -14,7 +14,7 @@ namespace Gameplay.Features.EntityDestroy.Systems
         {
             _validEntities = context.GetGroup(GameMatcher
                 .AllOf(GameMatcher.Destroying)
-                .NoneOf(GameMatcher.View, GameMatcher.Destroyed));
+                .NoneOf(GameMatcher.View, GameMatcher.MaterialType, GameMatcher.Destroyed));
         }
         
         public void Execute()

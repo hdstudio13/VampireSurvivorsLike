@@ -4,6 +4,8 @@ using Gameplay.Features.Animations;
 using Gameplay.Features.Asteroids;
 using Gameplay.Features.Asteroids.Factory;
 using Gameplay.Features.Attacking;
+using Gameplay.Features.CollectableMaterials;
+using Gameplay.Features.CollectableMaterials.Factories;
 using Gameplay.Features.Effects;
 using Gameplay.Features.EntityCollisions;
 using Gameplay.Features.EntityDestroy;
@@ -33,6 +35,7 @@ namespace Gameplay
             Add(factory.Create<AttackFeature>());
             Add(factory.Create<EffectFeature>());
             Add(factory.Create<HealthFeature>());
+            Add(factory.Create<MaterialFeature>());
             Add(factory.Create<MovementFeature>());
             Add(factory.Create<DestroyFeature>());
         }

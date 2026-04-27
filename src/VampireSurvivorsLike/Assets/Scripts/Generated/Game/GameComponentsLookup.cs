@@ -14,45 +14,48 @@ public static class GameComponentsLookup {
     public const int AttackCoolDown = 3;
     public const int AttackCoolDownTimer = 4;
     public const int Attacking = 5;
-    public const int Colliders = 6;
-    public const int HitVFX = 7;
-    public const int Id = 8;
-    public const int TargetEntities = 9;
-    public const int Transform = 10;
-    public const int WorldPosition = 11;
-    public const int Damage = 12;
-    public const int Effect = 13;
-    public const int Owner = 14;
-    public const int Target = 15;
-    public const int CollisionCooldownTimer = 16;
-    public const int LayerMask = 17;
-    public const int PerformingCollisionCheck = 18;
-    public const int Radius = 19;
-    public const int Alive = 20;
-    public const int Destroyed = 21;
-    public const int Destroying = 22;
-    public const int DestroyTimer = 23;
-    public const int CurrentHealth = 24;
-    public const int Health = 25;
-    public const int Acceleration = 26;
-    public const int Deacceleration = 27;
-    public const int MaxMoveSpeed = 28;
-    public const int MoveDirection = 29;
-    public const int MoveSpeed = 30;
-    public const int Moving = 31;
-    public const int Player = 32;
-    public const int ProjectileAttack = 33;
-    public const int Projectile = 34;
-    public const int ProjectilePivot = 35;
-    public const int DeltaRotation = 36;
-    public const int RotationSpeed = 37;
-    public const int WorldRotation = 38;
-    public const int Turret = 39;
-    public const int DestroyViewPath = 40;
-    public const int View = 41;
-    public const int ViewPath = 42;
+    public const int Material = 6;
+    public const int MaterialType = 7;
+    public const int Colliders = 8;
+    public const int HitVFX = 9;
+    public const int Id = 10;
+    public const int TargetEntities = 11;
+    public const int Transform = 12;
+    public const int WorldPosition = 13;
+    public const int Damage = 14;
+    public const int Effect = 15;
+    public const int Owner = 16;
+    public const int Target = 17;
+    public const int CollisionCooldownTimer = 18;
+    public const int CullingCollision = 19;
+    public const int LayerMask = 20;
+    public const int PerformingCollisionCheck = 21;
+    public const int Radius = 22;
+    public const int Alive = 23;
+    public const int Destroyed = 24;
+    public const int Destroying = 25;
+    public const int DestroyTimer = 26;
+    public const int CurrentHealth = 27;
+    public const int Health = 28;
+    public const int Acceleration = 29;
+    public const int Deacceleration = 30;
+    public const int MaxMoveSpeed = 31;
+    public const int MoveDirection = 32;
+    public const int MoveSpeed = 33;
+    public const int Moving = 34;
+    public const int Player = 35;
+    public const int ProjectileAttack = 36;
+    public const int Projectile = 37;
+    public const int ProjectilePivot = 38;
+    public const int DeltaRotation = 39;
+    public const int RotationSpeed = 40;
+    public const int WorldRotation = 41;
+    public const int Turret = 42;
+    public const int DestroyViewPath = 43;
+    public const int View = 44;
+    public const int ViewPath = 45;
 
-    public const int TotalComponents = 43;
+    public const int TotalComponents = 46;
 
     public static readonly string[] componentNames = {
         "Animator",
@@ -61,6 +64,8 @@ public static class GameComponentsLookup {
         "AttackCoolDown",
         "AttackCoolDownTimer",
         "Attacking",
+        "Material",
+        "MaterialType",
         "Colliders",
         "HitVFX",
         "Id",
@@ -72,6 +77,7 @@ public static class GameComponentsLookup {
         "Owner",
         "Target",
         "CollisionCooldownTimer",
+        "CullingCollision",
         "LayerMask",
         "PerformingCollisionCheck",
         "Radius",
@@ -107,6 +113,8 @@ public static class GameComponentsLookup {
         typeof(Gameplay.Features.Attacking.AttackCoolDown),
         typeof(Gameplay.Features.Attacking.AttackCoolDownTimer),
         typeof(Gameplay.Features.Attacking.Attacking),
+        typeof(Gameplay.Features.CollectableMaterials.MaterialComponent),
+        typeof(Gameplay.Features.CollectableMaterials.MaterialTypeComponent),
         typeof(Gameplay.Features.Common.Colliders),
         typeof(Gameplay.Features.Common.HitVFX),
         typeof(Gameplay.Features.Common.Id),
@@ -118,6 +126,7 @@ public static class GameComponentsLookup {
         typeof(Gameplay.Features.Effects.Owner),
         typeof(Gameplay.Features.Effects.Target),
         typeof(Gameplay.Features.EntityCollisions.CollisionCooldownTimer),
+        typeof(Gameplay.Features.EntityCollisions.CullingCollision),
         typeof(Gameplay.Features.EntityCollisions.LayerMaskComponent),
         typeof(Gameplay.Features.EntityCollisions.PerformingCollisionCheck),
         typeof(Gameplay.Features.EntityCollisions.Radius),

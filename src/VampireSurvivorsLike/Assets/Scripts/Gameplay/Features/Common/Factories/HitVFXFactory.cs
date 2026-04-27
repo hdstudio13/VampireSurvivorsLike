@@ -1,4 +1,5 @@
 ﻿using System;
+using Architecture.CameraManagement;
 using Architecture.Identification;
 using Gameplay.Features.EntityDestroy;
 using UnityEngine;
@@ -9,18 +10,18 @@ namespace Gameplay.Features.Common.Factories
     {
         private readonly GameContext _context;
         private readonly IIdentifierService _identifier;
-        private readonly Camera _camera;
+        private readonly ICameraService _cameraService;
 
-        public HitVFXFactory(GameContext context, IIdentifierService identifier, Camera camera)
+        public HitVFXFactory(GameContext context, IIdentifierService identifier, ICameraService cameraService)
         {
             _context = context;
             _identifier = identifier;
-            _camera = camera;
+            _cameraService = cameraService;
         }
         
         public GameEntity Create(HitVFXType type, Vector3 position, float autoDestroySeconds = 2)
         {
-            if (Vector3.Distance(position, _camera.transform.position) > 30)
+            if (!_cameraService.IsOnScreen(position))
             {
                 return null;
             }

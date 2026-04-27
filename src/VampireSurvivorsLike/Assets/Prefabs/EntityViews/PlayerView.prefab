@@ -35,6 +35,7 @@ Transform:
   - {fileID: 1485864175333328690}
   - {fileID: 951828078927679397}
   - {fileID: 547537093971125600}
+  - {fileID: 4221048082875504411}
   m_Father: {fileID: 6735790701592790835}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &420990016773643885
@@ -442,7 +443,6 @@ GameObject:
   - component: {fileID: 951828078927679397}
   - component: {fileID: 8437152655311316470}
   - component: {fileID: 8544415697080885918}
-  - component: {fileID: 2765109378660801020}
   m_Layer: 0
   m_Name: Quad
   m_TagString: Untagged
@@ -522,13 +522,45 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &2765109378660801020
-MeshCollider:
+--- !u!1 &7894993909243333809
+GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7889035672572057010}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4221048082875504411}
+  - component: {fileID: 8026066964949479416}
+  m_Layer: 0
+  m_Name: Collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4221048082875504411
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7894993909243333809}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 0.39016712, z: 1.4427633}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4444865494974752199}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &8026066964949479416
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7894993909243333809}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -540,10 +572,9 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8997995346178051972
 GameObject:
   m_ObjectHideFlags: 0
@@ -556,6 +587,7 @@ GameObject:
   - component: {fileID: 2252131255921762994}
   - component: {fileID: 7265352455042088745}
   - component: {fileID: 865772583263874744}
+  - component: {fileID: -7011559647856421222}
   m_Layer: 0
   m_Name: PlayerView
   m_TagString: Untagged
@@ -594,6 +626,7 @@ MonoBehaviour:
   monoRegistrars:
   - {fileID: 7265352455042088745}
   - {fileID: 865772583263874744}
+  - {fileID: -7011559647856421222}
 --- !u!114 &7265352455042088745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -620,6 +653,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Gameplay.Player.PlayerViewController
   leftFire: {fileID: 4873081741187575388}
   rightFire: {fileID: 5820337760225845131}
+--- !u!114 &-7011559647856421222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8997995346178051972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a1bfebbd2f9491e9419d9c8b1bc75b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Gameplay.Features.EntityCollisions.Registrars.PhysicsRegistrar
+  canBeCollided: 1
+  colliders:
+  - {fileID: 8026066964949479416}
+  canDetectCollisions: 0
+  collisionCheckRadius: 0
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  drawGizmos: 0
 --- !u!1001 &421459599808063384
 PrefabInstance:
   m_ObjectHideFlags: 0

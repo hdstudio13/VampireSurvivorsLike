@@ -8,4 +8,5 @@ namespace Gameplay.Features.EntityCollisions
     [Game] public class Radius : IComponent { public float Value; }
     [Game] public class LayerMaskComponent : IComponent { public LayerMask Value; }
     [Game] public class CollisionCooldownTimer : IComponent { public float Value; }
+    [Game] public class CullingCollision : IComponent { }
 }

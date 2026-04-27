@@ -62,7 +62,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.000000059605, z: 0}
-  m_LocalScale: {x: 1.847526, y: 1.847526, z: 1.847526}
+  m_LocalScale: {x: 1.9802152, y: 1.9802152, z: 1.9802152}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3060375373086117095}
@@ -159,7 +159,7 @@ GameObject:
   - component: {fileID: 2894847725008848911}
   - component: {fileID: 5192131571724039929}
   m_Layer: 0
-  m_Name: AsteroidView5
+  m_Name: AsteroidView1_None
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -242,8 +242,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ea4c26aefe7468890d951c4a35a570d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gameplay.Features.Health.Registrars.HealthRegistrar
-  maxHealth: 100
-  currentHealth: 100
+  maxHealth: 50
+  currentHealth: 50
 --- !u!1 &6873639749775970373
 GameObject:
   m_ObjectHideFlags: 0
@@ -272,7 +272,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.00000041723, z: 0}
-  m_LocalScale: {x: 0.26662815, y: 0.26662815, z: 0.26662815}
+  m_LocalScale: {x: 0.2293378, y: 0.2293378, z: 0.2293378}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3060375373086117095}
@@ -333,4 +333,4 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6873639749775970373}
-  m_Mesh: {fileID: 4710690249231838101, guid: 22b9b9f62605e1c4797d7446a8269ae8, type: 3}
+  m_Mesh: {fileID: -5168569593193868212, guid: 22b9b9f62605e1c4797d7446a8269ae8, type: 3}
