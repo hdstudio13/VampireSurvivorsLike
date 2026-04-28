@@ -1,0 +1,5 @@
+interface:
+  display_name: "Vampire Survivors Project"
+  short_description: "Keep this Unity project documented"
+  default_prompt: "Use $vampire-survivors-project before working on the VampireSurvivorsLike Unity project."
+
