@@ -12,3 +12,5 @@
 - Reworked documentation into a tree-based structure with routing index files and focused branch docs for architecture, features, systems, and workflows.
 - Added `docs/workflows/export-documentation-prompt.md` to reproduce this local-only documentation workflow with another AI agent.
 - Added `docs/standards/code-quality.md` for enterprise-level coding standards, SOLID guidance, patterns, and comment rules.
+- Added the project-local Unity MCP package dependency `com.gamelovers.mcp-unity` and documented setup in `docs/workflows/unity-mcp.md`.
+- Updated `.gitignore` to allow Unity `Packages/manifest.json` and `Packages/packages-lock.json` to be versioned.

@@ -13,6 +13,7 @@ Use this file as the navigation hub. Read only the branch that matches the task.
 - Physics overlap, collision registry, collision behavior: `systems/physics-and-collision.md`
 - Code quality, SOLID, maintainability, comments: `standards/code-quality.md`
 - Jenny/Entitas regeneration workflow: `workflows/jenny-codegen.md`
+- Unity MCP package and setup workflow: `workflows/unity-mcp.md`
 - Export prompt for reproducing this documentation workflow in another project: `workflows/export-documentation-prompt.md`
 
 ## First-Party Code Roots

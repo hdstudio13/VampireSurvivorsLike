@@ -12,7 +12,7 @@ Read this file first before starting project tasks.
 - Documentation router: see `docs/ARCHITECTURE.md`, then read only the relevant branch file.
 - Main scene: `Assets/Scenes/GameplayScene.unity`
 - Build settings include only `GameplayScene`.
-- Main packages: VContainer, Entitas/Jenny, UniTask, Addressables, Unity Input System, Cinemachine, URP, DOTween, NaughtyAttributes.
+- Main packages: VContainer, Entitas/Jenny, UniTask, Addressables, Unity Input System, Cinemachine, URP, DOTween, NaughtyAttributes, MCP Unity.
 - Third-party/vendor-heavy areas: `Assets/Entitas`, `Assets/JMO Assets`, `Assets/Plugins`, Unity `Library`.
 
 ## Working Agreement

@@ -177,3 +177,6 @@ src/VampireSurvivorsLike/Library
 src/VampireSurvivorsLike/Logs
 src/VampireSurvivorsLike/Temp
 src/VampireSurvivorsLike/UserSettings
+!src/VampireSurvivorsLike/Packages/
+!src/VampireSurvivorsLike/Packages/manifest.json
+!src/VampireSurvivorsLike/Packages/packages-lock.json
