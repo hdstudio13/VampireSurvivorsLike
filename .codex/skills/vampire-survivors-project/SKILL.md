@@ -16,12 +16,15 @@ Use this local skill to work efficiently in the VampireSurvivorsLike Unity proje
 3. Open only the smallest relevant branch file under `docs\architecture`, `docs\features`, `docs\systems`, or `docs\workflows`.
 4. Open `docs\README.md` only if the documentation structure itself is unclear.
 5. Open `docs\DECISIONS.md` before changing architecture, conventions, workflows, or cross-cutting behavior.
-6. Open `docs\CHANGELOG.md` before summarizing recent project changes or adding new change notes.
-7. Use the docs to narrow source inspection. Prefer targeted searches over broad project reads.
+6. Open `docs\standards\code-quality.md` before implementing or reviewing first-party code.
+7. Open `docs\CHANGELOG.md` before summarizing recent project changes or adding new change notes.
+8. Use the docs to narrow source inspection. Prefer targeted searches over broad project reads.
 
 ## During Work
 
 - Respect current repository patterns before adding new abstractions.
+- Write enterprise-level code: maintainable, extendable, SOLID, and aligned with widely understood patterns.
+- Add concise comments or public contract documentation when intent, lifecycle, or extension rules are non-obvious.
 - Record durable high-level discoveries in `docs\AI_CONTEXT.md` only when they affect most future tasks.
 - Record area-specific discoveries in the matching branch file.
 - Record durable architecture or workflow decisions in `docs\DECISIONS.md`.

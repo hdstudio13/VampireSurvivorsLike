@@ -17,3 +17,9 @@ Reason: a local Skill keeps workflow guidance versioned with the project, while 
 Use `docs/AI_CONTEXT.md` as the small entry point, `docs/ARCHITECTURE.md` as the routing index, and focused branch files under `docs/architecture`, `docs/features`, `docs/systems`, and `docs/workflows`.
 
 Reason: focused branch files reduce token use for feature tasks and make project knowledge easier to update without bloating a single document.
+
+## 2026-04-28: Hold first-party code to enterprise quality standards
+
+Write first-party code with a high maintainability bar: SOLID design, clear ownership, extendable structure, widely understood patterns, and useful comments where intent is non-obvious.
+
+Reason: the project is expected to grow through repeated feature work, so consistency and long-term maintainability matter more than quick local fixes.

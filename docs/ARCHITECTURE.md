@@ -11,6 +11,7 @@ Use this file as the navigation hub. Read only the branch that matches the task.
 - Entity views, Addressables, pooling, registrars: `systems/views-and-assets.md`
 - Input bindings and input service: `systems/input.md`
 - Physics overlap, collision registry, collision behavior: `systems/physics-and-collision.md`
+- Code quality, SOLID, maintainability, comments: `standards/code-quality.md`
 - Jenny/Entitas regeneration workflow: `workflows/jenny-codegen.md`
 - Export prompt for reproducing this documentation workflow in another project: `workflows/export-documentation-prompt.md`
 

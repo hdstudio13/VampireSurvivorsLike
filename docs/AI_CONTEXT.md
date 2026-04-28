@@ -21,6 +21,7 @@ Read this file first before starting project tasks.
 - `AGENTS.md` in the repository root reinforces this workflow for Codex.
 - The local Codex Skill at `.codex/skills/vampire-survivors-project` also points future project work back to these docs.
 - Use tree-based documentation: read this file, use `docs/ARCHITECTURE.md` as the router, then open only the relevant branch under `architecture/`, `features/`, `systems/`, or `workflows/`.
+- Follow `docs/standards/code-quality.md` for enterprise-level code quality, maintainability, SOLID principles, patterns, and comments.
 - Keep updates concise and factual.
 - When a task changes behavior, structure, tooling, or workflow, update the relevant documentation in the same change.
 - Prefer targeted source inspection based on this context instead of reading the whole project from scratch.

@@ -11,3 +11,4 @@
 - Verified `Jenny/Jenny-Gen.bat` can run from the `Jenny/` working directory and documented the regeneration command.
 - Reworked documentation into a tree-based structure with routing index files and focused branch docs for architecture, features, systems, and workflows.
 - Added `docs/workflows/export-documentation-prompt.md` to reproduce this local-only documentation workflow with another AI agent.
+- Added `docs/standards/code-quality.md` for enterprise-level coding standards, SOLID guidance, patterns, and comment rules.
